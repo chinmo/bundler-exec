@@ -51,7 +51,6 @@ cucumber
 foreman
 guard
 haml
-heroku
 html2haml
 rackup
 rails
@@ -76,7 +75,7 @@ unicorn_rails
 fi
 
 for CMD in ${(f)BUNDLED_COMMANDS}; do
-    if [[ $CMD != "bundle" && $CMD != "gem" ]]; then
+    if [[ $CMD != "bundle" && $CMD != "gem" && $CMD != "heroku" ]]; then
         alias $CMD="run-with-bundler $CMD"
     fi
 done
