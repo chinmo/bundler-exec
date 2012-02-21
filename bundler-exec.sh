@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/zsh
 
 # Automatically run Ruby scripts with "bundle exec" (but only when appropriate).
 # http://effectif.com/ruby/automating-bundle-exec
@@ -75,7 +75,7 @@ unicorn_rails
 }"
 fi
 
-for CMD in $BUNDLED_COMMANDS; do
+for CMD in ${(f)BUNDLED_COMMANDS}; do
     if [[ $CMD != "bundle" && $CMD != "gem" ]]; then
         alias $CMD="run-with-bundler $CMD"
     fi
